@@ -27,12 +27,34 @@ public class CallbackIdx : MonoBehavior {
 	/*
 	* Variable References
 	* 	- idxName : String
-	*	 			determines an animation name.
+	*	 			determine an animation name.
 	*		- idxLayer : Short integer
-	*				determines an animator layer.
+	*				determine an animator layer.
 	*/
 	public string idxName { get; set; };
 	public short idxLayer { get; set; };
 
-	
+	/*
+	* Interface Methods
+	*		- callbackCondition : bool
+	*				determine conditions for running a callback script.
+	*		- callbackFunction : void
+	*				determine the function that will run when callbackCondition return TRUE value.
+	*/
+	bool callbackCondition() { return true; }
+	void callbackFuntion() { }
+
+	/*
+	* Abstract Method
+	*		- run : void
+	*				run callback script.
+	*/
+	void run()
+	{
+			if(callbackCondition())
+			{
+				// Occurs when callbackCondition return true value.
+				callbackFunction();
+			}
+	}
 }
