@@ -18,4 +18,4 @@ Or just directly download the project to your Scripts folder.
 - Now, you can use your instance callback for each animator.
 
 # License
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
