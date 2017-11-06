@@ -36,7 +36,7 @@ namespace Assets.Scripts
 	    */
         public string idxName { get; set; }
         public short idxLayer { get; set; }
-        public Animator anim;
+        public Animator anim; // GameObject animator.
 
         // Enable logger function, (recommend to set FALSE for optimizing performance)
         public bool useLog = false;
