@@ -29,10 +29,10 @@ namespace Assets.Scripts
     {
         /*
 	    * Variable References
-	    * 	- idxName : String
-	    *	 			determine an animation name.
-	    *		- idxLayer : Short integer
-	    *				determine an animator layer.
+	    *  - idxName : String
+	    *      determine an animation name.
+	    *  - idxLayer : Short integer
+	    *	   determine an animator layer.
 	    */
         public string idxName { get; set; }
         public short idxLayer { get; set; }
@@ -40,14 +40,24 @@ namespace Assets.Scripts
 
         // Enable logger function, (recommend to set FALSE for optimizing performance)
         public bool useLog = false;
+
         /*
 	    * Interface Methods
-	    *		- callbackCondition : bool
-	    *				determine conditions for running a callback script.
-	    *		- callbackFunction : void
-	    *				determine the function that will call when callbackCondition return TRUE value.
-	    *		- callbackLog : void
-	    *				determine the logger function that will call when useLog is TRUE.
+	    *  -callbackFunction : void
+	    *	  determine the function that will call when callbackCondition return TRUE value.
+	    *  -callbackLog : void
+	    *	  determine the logger function that will call when useLog is TRUE.
+	    */
+        public virtual void callbackFunction() { }
+        public virtual void callbackElseFunction() { }
+        public virtual void callbackLog() { }
+
+        /*
+	    * Abstract Method
+        *  -callbackCondition : bool
+	    *	  determine conditions for running a callback script.
+	    *  -run : void
+	    *     run a callback script.
 	    */
         bool callbackCondition()
         {
@@ -59,19 +69,11 @@ namespace Assets.Scripts
             callbackElseFunction();
             return false;
         }
-        void callbackFunction() { }
-        void callbackElseFunction() { }
-        void callbackLog() { }
-        /*
-	    * Abstract Method
-	    *		- run : void
-	    *				run callback script.
-	    */
-        void run()
+        public void run()
         {
             if (callbackCondition())
             {
-                // Occurs when callbackCondition return true value.
+                // Occurs when callbackCondition return TRUE value.
                 callbackFunction();
             }
             else if (useLog)
