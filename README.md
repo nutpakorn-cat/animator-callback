@@ -7,7 +7,7 @@ A simple callback script for compatible working with the animator system in Unit
 # Getting Started
 The animator callback is able to install by using a `git clone` command.
 ```
-git clone git://github.com/nutterrocker/Animator-Callback.git
+git clone git://github.com/nutterrocker/Animator-Callback
 ```
 Or just directly download the project to your Scripts folder.
 
